@@ -1,0 +1,163 @@
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+body {
+	font-family: "Open Sans", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Kavivanar", cursive;
+	font-weight: normal;
+}
+h2 {
+	font-size: 2rem;
+	color: #a51f10;
+	margin: 0;
+}
+a {
+	color: #da0090;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+.posted {
+	font-size: 0.8rem;
+	color: #89a611;
+}
+footer {
+	text-align: center;
+	font-size: 0.8rem;
+}
+/* ================== blog-begin =================== */
+
+header {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+.leftheader {
+	flex-basis: 40%;
+	/* ❤️‍🔥❤️‍🔥❤️‍🔥 why does text-align work on positioning an image tag? */
+	text-align: right; /* ❤️‍🔥❤️‍🔥❤️‍🔥 bc it's an inline element 😮 */
+	padding-right: 0.5rem;
+}
+.rightheader {
+	flex-basis: 60%;
+	margin-top: 3.75rem;
+	padding-left: 0.5rem;
+}
+.rightheader h1 {
+	margin: 0;
+	color: #da0090;
+	font-size: 3rem;
+}
+.rightheader p {
+	margin-top: -0.5rem;
+}
+
+/* ================ nav ================== */
+nav {
+	border-top: 1px solid #a51f10;
+}
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+/* issue I had with flexbox: longer link labels would start to wrap at smaller screen resolutions.
+for this exercise, regular css box model adjustments worked better.  */
+/* nav li {
+	flex-basis: 9%;
+	display: block;
+	padding: 0.5rem;
+	text-align: center;
+} */
+nav li {
+	display: inline-block;
+}
+nav a {
+	text-decoration: none;
+	display: block; /* ❤️‍🔥 expands the inline a element into a
+	block element to occupy the full area of the li❤️‍🔥 */
+	padding: 0.5rem 1rem;
+}
+nav a:hover {
+	background-color: black;
+	text-decoration: none;
+}
+
+/* ================= main section ================ */
+.wrapper {
+	/* there is some space between the edge of the layout and the browser window */
+	width: 80%;
+	margin: 0 auto;
+}
+article img {
+	float: left;
+	margin: 0 1rem 1rem 0;
+	border-radius: 1rem;
+}
+section {
+	padding-bottom: 1rem;
+	border-top: 1px solid #a51f10;
+	border-bottom: 1px solid #da0090;
+	margin-bottom: 0.3rem;
+}
+article:before {
+	content: "";
+	display: table;
+	clear: both;
+}
+article:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+article {
+	/* border: 1px dashed magenta; */
+	padding: 2rem 0;
+}
+
+/* =============== footer =============== */
+footer {
+	border-top: 1px solid #a51f10;
+}
+footer ul {
+	display: flex;
+	list-style-type: none;
+	flex-flow: row nowrap;
+	justify-content: center;
+	padding: 0;
+}
+footer li {
+	padding: 0 2px;
+}
+
+/*
+DIFFERENCES IN SOLUTION
+
+- started with footer;
+- with all navs: reset all margin, padding and default styling to 0 || none in the footer ul
+- footer li uses inline block
+- we used flexbox; she did not, both are fine to use
+- can put spacing margin on bottom of section OR top of footer; either will do for this case
+
+so sometimes it's flexbox, sometimes it's default margins that come with it from the browser
+that you have to get rid of / ✨reset✨. sometimes you gotta add your own margin and padding;
+but it's all boxes and boxes and boxes 📦📦📦
+
+HOW DO WE CHOOSE BETWEEN FLEXBOX AND INLINE BLOCK?
+inline block is still used and used together a lot
+more flexbox going forward
+*/

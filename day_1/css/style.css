@@ -1,0 +1,57 @@
+body {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	width: 60%;
+	margin: auto;
+	background-color: #832cd6;
+	color: azure;
+}
+
+h1 {
+	background-color: violet;
+	text-align: center;
+	padding: 1rem;
+	color: #740eef;
+	border-radius: 5rem;
+}
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active {
+	text-decoration: underline;
+	color: #740eef;
+	background-color: azure;
+}
+blockquote {
+	/* box-shadow: inset 5em 1em #7e6fc4; */
+	box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+	margin: 3rem;
+}
+
+/* ----------- floats exercise ------------ */
+
+.floatleft {
+	border: 3px dashed violet;
+	border-radius: 5rem;
+	float: left;
+	margin: 0 1rem 3rem 0;
+}
+article:before {
+	content: "";
+	display: table;
+	clear: both;
+}
+article:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.floatright {
+	border: 2px dashed lightcyan;
+	float: right;
+	margin: 0 0 3rem 1rem;
+}
+blockquote {
+	padding: 2rem;
+	width: 50%;
+}

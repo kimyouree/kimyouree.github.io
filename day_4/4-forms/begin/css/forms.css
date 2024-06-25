@@ -1,0 +1,100 @@
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-image: url(../img/galaxy.jpg);
+}
+h1,
+h3,
+legend {
+	font-family: "Architects Daughter", cursive;
+	font-weight: 400;
+	font-style: normal;
+}
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+	padding: 1em;
+	display: flex;
+	flex-flow: row nowrap;
+	background-color: #8fb7e8;
+}
+p,
+[for="abtype"],
+[for="comments"] {
+	margin-bottom: 0;
+	margin-top: 2rem;
+}
+section {
+	flex-basis: 57%;
+	margin-right: 10%;
+}
+aside {
+	flex-basis: 33%;
+}
+/* ================= our form styles =================== */
+fieldset {
+	border: 1px solid black;
+	border-radius: 10px;
+	margin-bottom: 2rem;
+}
+/* how to tell if an element is an inline or block element: put a border on it */
+/* legend is an inline element bc it doesn't go all the way across (the width)
+	and it is as big as it's 🌱content🌱 */
+legend {
+	font-weight: bold;
+	font-size: 1.3rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
+	/* display: block; */
+}
+label {
+	/* border: 1px solid blue; */
+	/* changing the inline label element to block makes the label's content as wide as it's (fieldset) parent  */
+	display: block;
+	padding-bottom: 0.3rem;
+}
+textarea {
+	height: 10rem;
+	padding: 1rem;
+}
+select {
+	font-size: 1rem;
+}
+button {
+	font-size: 1rem;
+	margin: 2rem 0;
+	background-color: #bb342f;
+	color: white;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 10px;
+}
+button:hover {
+	cursor: pointer;
+	background-color: white;
+	color: #bb342f;
+}
+/* 😮❤️‍🔥😮 square brackets: attribute selector😮❤️‍🔥😮 */
+/* all inputs should be block elements EXCEPT radio-type inputs,
+	not the checkboxes AND for the textarea, this is what i want to do
+*/
+input:not([type="radio"]):not([type="checkbox"]),
+textarea,
+select {
+	display: block;
+	margin-bottom: 2rem;
+	width: 20rem; /* now all the inputs are the same width, nice and consistent!! */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1rem;
+	padding: 0 1rem;
+	border-radius: 10px;
+}

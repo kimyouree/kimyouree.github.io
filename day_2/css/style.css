@@ -1,0 +1,139 @@
+/* my css */
+
+/* FONTSTACK: not every puter has every font, so if we give it 3, it'll try to load the fonts from left to right. Arial first, Helvetica second and then lastly, just a generic sans-serif front. They're contingency fonts.
+
+Font names with more than 1 word have quotes around it.
+*/
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	/* this way of writing color in 6-digit format, works everywhere */
+	background-color: #ffffcc;
+}
+img {
+	border: 10px solid greenyellow;
+	text-align: center;
+}
+h1 {
+	border: 5px dotted magenta;
+}
+blockquote {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	/* rem: relative ems.
+        What's an 'em'?: a size that's established by your browser for the font-size by default.
+        1em, in this particular case, in your browser happens to correspond to 16pixels high.
+        That's that Times New Roman font that we've been working with, it's the same size font
+        that we're working with, with Arial. Some fonts look a little bigger, some look a little
+        smaller, bc 'em' as a unit of measure, actually measures the width of the letter 'm',
+        lowercase Ⓜ️.
+
+        So some fonts might look bigger overall, but the width of the letter 'm' is the method
+        by which we're measuring things.
+
+        So '3REM': we take 3 and we multiply it by 16. The size of this font would actually be
+        48pixels, okay? (it's gonna be really big) The reason that we are not using 48px, is that
+        we are eventually, as web developers, work with a whole bunch of different devices, right?
+        Maybe looking at our site on a phone, a tablet, or a refrigerator. There's all kinds of
+        crazy places they might be looking at it. And by using REMs, we're going to be able to
+        have this nicely adjust to whatever device that we're using. this tends to be an INDUSTRY
+        STANDARD.
+
+        Q: is 1m/em going to be different depending on the font that you're using? So if you're
+            using 'Georgia', 1m is different than the Times New Roman.
+        A: Yes. They're all 16 pixels, but the size that you see, it might look like Georgia's a
+            bit smaller, Arial's a bit smaller.
+
+
+    */
+	font-size: 3rem;
+	font-style: italic;
+	text-align: center;
+}
+p {
+	color: red;
+}
+#myid {
+	color: violet;
+	font-weight: bold;
+}
+cite {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+ul,
+ol {
+	background-color: fuchsia;
+}
+a {
+	text-decoration: none;
+	color: azure;
+	background-color: fuchsia;
+}
+li {
+	color: azure;
+}
+h2,
+h3 {
+	background-color: aquamarine;
+}
+
+/* You can code an 'exception to the rule' using CLASSES (the rules being the built-in tag styles) */
+/* The name should be self-documenting: so when you look at
+the name of the class you kind of have a sense of what it does. */
+
+.bigbold {
+	/* our description below */
+	font-weight: bold;
+	font-size: 1.3rem;
+	background-color: violet;
+	text-align: center;
+	line-height: 1.3rem;
+	text-shadow: 2px 2px #ff0000;
+	padding: 1rem;
+	color: azure;
+}
+.header-img {
+	text-align: center;
+}
+/* These extra classes (pseudo-classes) need to be in a SPECIFIC ORDER in order for the cascade to work correctly:
+    :link -- unvisited link🔗
+    :visited -- visited state😎
+    :focus -- the currently selected element👈
+    :hover -- hover your mouse over this
+    :active -- the time between the link is selected and the time the page loads (not used much)
+
+    Lord Vader Former Handle Anakin
+
+    :link, :visited, :active are used almost exclusively on links (the a tag).
+    The pseudo-classes :focus and :hover are used with links and with any other element on the page.
+    :focus is especially useful with forms and in accessibility contexts (and touch devices).
+
+	*Note: Also part of the cascade: default browser styles are the least specific of all
+		stylesheets; they will not overpower or be more specific than what you write
+		in your own style sheet.
+
+	*/
+/* This is a descendant selector👧🏻: all of the a tags that live inside the ul, apply this description */
+ul a:link {
+	font-weight: bold;
+}
+a:visited {
+	font-size: 2rem;
+	font-weight: normal;
+}
+a:hover {
+	color: magenta;
+	background-color: azure;
+	text-decoration: underline;
+}
+a.harvard {
+	color: maroon;
+}
+
+/* color palette-picker: https://color.adobe.com/create/color-wheel > Explore tab */
+
+/* BLOCK VS. INLINE ELEMENTS
+
+	BLOCK: wide elements that take up the width of your page. ie, div, p, h1. Block-level html elements, their width by default is the width of their parent.
+
+	INLINE: the width (border) is only as wide as the content. ie, a, em, strong.
+*/

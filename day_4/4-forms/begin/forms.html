@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Alien Abduction Order Form</title>
+		<link href="css/forms.css" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	</head>
+	<body>
+		<div class="wrapper">
+			<section>
+				<h1>Alien Abduction Order Form</h1>
+				<p>
+					Fill out the form below to place an order for an alien
+					abduction by one of our fine UFOs.
+				</p>
+				<form
+					action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES"
+					method="POST"
+				>
+					<!-- this can go anywhere inside of the form tag -->
+					<!-- `id` isn't required on a hidden field;
+					so no label tag is required bc it doesn't need to be accessible. -->
+					<input
+						type="hidden"
+						name="send_to"
+						value="kimyouree@icloud.com"
+					/>
+					<!-- fieldset is good for accessibility; to break up your form into manageable chunks -->
+					<fieldset>
+						<!-- legend is designed to say what this fieldset is doing here -->
+						<legend>Your contact information</legend>
+						<!-- the for value should match the input's id argument -->
+						<label for="name"> Your name </label>
+						<!-- the javaScript processesing script (associated with forms)
+								on the server needs this name field; sometimes those ids can
+								also be used in JavaScript. But in our case, very specifically,
+								the id is associated with the label.
+
+								when we click our submit button for our form, and this
+								whole contents of the form get sent to the server, right?
+								The processing script on the server needs this `name` field
+								in order to do whatever it needs to do. -->
+						<input type="text" id="name" name="name" />
+						<label for="phone">Phone number</label>
+						<input
+							type="tel"
+							id="phone"
+							name="phone"
+							placeholder="Don't forget your area code!"
+						/>
+
+						<label for="email">Email </label>
+						<input type="email" id="email" name="email" />
+					</fieldset>
+
+					<fieldset>
+						<legend>About your abduction</legend>
+						<label for="date">Requested date</label>
+						<input type="date" id="date" name="date" />
+						<label for="qty">
+							How many people would you like abducted?
+						</label>
+						<input
+							min="1"
+							max="10"
+							type="number"
+							id="qty"
+							name="qty"
+						/>
+						<p>What type of UFO do you prefer?</p>
+
+						<!-- radio tags: we wrap our input in a label tag to associate it -->
+						<!-- whenever you see more than 1 radio button selected at a time, the issue has to do with your `name` attribute -->
+						<label>
+							<!-- pre-select a radio button -->
+							<input
+								type="radio"
+								name="ufotype"
+								value="classic"
+								checked
+							/>
+							Classic oval UFO
+						</label>
+						<label>
+							<input
+								type="radio"
+								name="ufotype"
+								value="cruiser"
+							/>
+							Star Wars-style Imperial cruiser
+						</label>
+						<label>
+							<input type="radio" name="ufotype" value="viper" />
+							Battlestar Galactica-style Viper
+						</label>
+						<label>
+							<input type="radio" name="ufotype" value="cube" />
+							Borg-style cube
+						</label>
+
+						<label for="abtype">
+							What type of abduction experience do you want?
+						</label>
+						<!-- `name` goes on the select tag on dropdown menus (not on the individual option tags) -->
+						<!-- use the HTML VALIDATOR if unsure when debugging -->
+						<select id="abtype" name="abtype">
+							<option selected>Select one...</option>
+							<option value="tour">
+								Tour of the solar system
+							</option>
+							<option value="dinner">
+								Alien dinner and discussion
+							</option>
+							<option value="dance">Alien dance lessons</option>
+							<option value="whales">Whale watching</option>
+						</select>
+
+						<label for="comments">Special requests:</label>
+						<textarea
+							name="comments"
+							id="comments"
+							placeholder="Tell me everything..."
+						></textarea>
+
+						<!-- what do we still need to have when we have an input like this and
+							the text right next to it? a LABEL tag📛 around the whole thing.
+							When the label wraps around the whole thing like this, you don't have to
+							have that `for` - `id` thing going on explicitly.
+
+							Whereas in the inputs/labels where we have the actual label separated
+							from the actual widget (input); like in the Contact Information section,
+							you need that connection of `id` and `for`, but down here in the Email List
+							and radio button sections, where we've got our options together as a unit,
+							you can just use the plain old label tag (with no id attribute), like here.
+						-->
+						<label>
+							<!-- pre-select the checkbox -->
+							<input
+								type="checkbox"
+								name="subscribe"
+								value="subscribe"
+								checked
+							/>
+							Add me to your email list!
+						</label>
+					</fieldset>
+
+					<!--
+						no `id`: bc there's no label
+						no `name`: bc the btn has nothing to do with any values that we're
+							trying to process on the server; this is just sending the information over.
+						therefore there's also no `value` for the btn
+					-->
+					<button type="submit">Submit</button>
+				</form>
+			</section>
+			<aside>
+				<h3>Our Location</h3>
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d720.4285051642105!2d-79.59122493034353!3d43.75803509819358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3ac3855f5f7b%3A0xa761905bb660debc!2s3%20Evangeline%20Ct%2C%20Etobicoke%2C%20ON%20M9V%204V2!5e0!3m2!1sen!2sca!4v1719067596454!5m2!1sen!2sca"
+					width="400"
+					height="300"
+					style="border: 0"
+					allowfullscreen=""
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
+				></iframe>
+				<address>
+					Frontend Masters &middot; 60 South 6th Street &middot; Suite
+					3625 &middot; Minneapolis, MN 55402
+				</address>
+			</aside>
+		</div>
+		<script src="js/forms.js"></script>
+	</body>
+</html>
+<!--
+	rundown on the difference between id, name and value:
+
+	the value of `id` (in the input) and the value of the `for` attribute in the label tag
+	they have to be the same, always. ids and for, go together
+
+	`name` is for backend processing.
+	`value` is the one that's going to vary. But `value` is the actual value.
+
+	Instructor likens `name and value` to a css property "border: 1px solid red" bc the
+	The property is `name` and the `value` is whatever it is.
+
+	ie. the phone input's `name` is the property name (of the box) and the `value` is whatever
+		the user entered as input to that field. A key-value-pair; or a header-column relationhip
+		in excel.
+
+	In the case of a RADIO BTN for example, or for a SELECT BOX, there's nothing to type in, right?
+	So somehow we still need to transmit a value. And so that's why we have a `value` property here
+	for radio buttons and select boxes (also for checkboxes).
+-->
