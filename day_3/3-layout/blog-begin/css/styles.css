@@ -48,7 +48,7 @@ header {
 .leftheader {
 	flex-basis: 40%;
 	/* ❤️‍🔥❤️‍🔥❤️‍🔥 why does text-align work on positioning an image tag? */
-	text-align: right; /* ❤️‍🔥❤️‍🔥❤️‍🔥 bc it's an inline element 😮 */
+	text-align: right; /* ❤️‍🔥❤️‍🔥❤️‍🔥 bc it's (img) an inline element 😮 */
 	padding-right: 0.5rem;
 }
 .rightheader {

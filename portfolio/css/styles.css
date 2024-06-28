@@ -1,0 +1,174 @@
+/* Color Theme Swatches in Hex */
+:root {
+	--purple: #ac66f2;
+	--green: #07f285;
+	--blue: #05dbf2;
+	--yellow: #f7f391;
+	--pink: #f76dc8;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper {
+	/* border: 3px dotted red; */
+	width: 80%;
+	margin: 0 auto;
+	padding: 1em;
+	background-color: #ecf3fb;
+}
+header {
+	/* border: 1px solid blue; */
+	/* striped background */
+	position: relative;
+	background-image: linear-gradient(
+		to right,
+		var(--purple) 0%,
+		var(--purple) 20%,
+		var(--green) 20%,
+		var(--green) 40%,
+		var(--blue) 40%,
+		var(--blue) 60%,
+		var(--yellow) 60%,
+		var(--yellow) 80%,
+		var(--pink) 80%,
+		var(--pink) 100%
+	);
+	background-size: cover;
+	background-attachment: fixed;
+
+	/* box model */
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	padding: 3rem;
+	border-radius: 10px;
+}
+.leftheader {
+	flex-basis: 40%;
+	text-align: right;
+	padding-left: 0.5rem;
+	margin: auto 0;
+}
+.rightheader {
+	flex-basis: 60%;
+	margin: auto 0;
+	padding-left: 0.5rem;
+	font-size: 5em;
+}
+nav {
+	/* border: 1px solid blue; */
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+nav li {
+	display: inline-block;
+}
+nav a {
+	text-decoration: none;
+	/* expand link to whole button */
+	display: block;
+	padding: 0.5rem 1rem;
+	color: var(--purple);
+	font-size: 1.5rem;
+}
+nav a:hover {
+	background-image: linear-gradient(
+		to right,
+		var(--purple) 0%,
+		var(--purple) 20%,
+		var(--green) 20%,
+		var(--green) 40%,
+		var(--blue) 40%,
+		var(--blue) 60%,
+		var(--yellow) 60%,
+		var(--yellow) 80%,
+		var(--pink) 80%,
+		var(--pink) 100%
+	);
+	background-size: cover;
+	background-attachment: fixed;
+	/* background-color: #f76dc8; */
+	text-decoration: none;
+	color: azure;
+	border-radius: 5px;
+}
+nav .contact {
+	color: var(--green);
+}
+nav .home {
+	color: rgb(201, 192, 6);
+}
+nav .professional {
+	color: var(--pink);
+}
+h1 {
+	margin-top: 5rem;
+	text-align: center;
+}
+section {
+	margin: 0 0 5rem 0;
+}
+section:not(.professional) {
+	text-align: center;
+}
+footer {
+	text-align: center;
+}
+
+/* =============== knit.html ================== */
+img.knit {
+	width: 40%;
+}
+
+/* =============== professional.html ================== */
+article {
+	padding: 1rem 5rem 1rem;
+}
+.professional img {
+	width: 25%;
+}
+.floatleft img {
+	float: left;
+	margin-right: 1rem;
+}
+article:before {
+	content: "";
+	display: table;
+	clear: both;
+}
+.floatright img {
+	float: right;
+	margin-left: 1rem;
+}
+article:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.floatleft p {
+	text-align: left;
+	margin: 1rem 0;
+}
+.floatright p {
+	text-align: right;
+	margin: 1rem 0;
+}
+/* =============== contact.html ================== */
+.form-wrapper {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+}
+.form-wrapper section {
+	flex-basis: 57%;
+}
+.form-wrapper aside {
+	flex-basis: 33%;
+}
